@@ -1,0 +1,558 @@
+:root {
+    /* Light theme */
+    --primary: #4f46e5;
+    --secondary: #7c3aed;
+    --bg-light: #ffffff;
+    --text-light: #1a1a1a;
+    --accent-light: #00ffff;
+    
+    /* Dark theme */
+    --bg-dark: #121212;
+    --text-dark: #ffffff;
+    --accent-dark: #00ff9d;
+    
+    /* Common */
+    --transition: all 0.3s ease;
+}
+
+/* Base styles */
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    transition: var(--transition);
+}
+
+body.dark-theme {
+    background-color: var(--bg-dark);
+    --primary: var(--accent-dark);
+    color: var(--text-dark);
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.dark-theme .navbar {
+    background: rgba(18, 18, 18, 0.9);
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 30px;
+    }
+}
+
+.logo-img {
+    height: 110px;
+    transition: var(--transition);
+    width: auto;
+  }
+  
+  .dark-mode {
+    display: none;
+  }
+  
+  body.dark-theme .light-mode {
+    display: none;
+  }
+  
+  body.dark-theme .dark-mode {
+    display: inline;
+  }
+  
+
+.profile-toggle {
+    display: flex;
+    background: #f0f0f0;
+    border-radius: 2rem;
+    padding: 0.25rem;
+}
+
+.dark-theme .profile-toggle {
+    background: #2a2a2a;
+}
+
+.profile-toggle button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 1.5rem;
+    background: none;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-light); 
+}
+
+.dark-theme .profile-toggle button {
+    color: var(--text-dark); /* 👈 Et celle-ci pour le mode sombre */
+}
+
+.profile-toggle button.active {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: var(--primary);
+}
+
+.dark-theme .profile-toggle button.active {
+    background: #404040;
+    color: var(--accent-dark); 
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem;
+}
+
+.nav-link {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 6rem 1rem 2rem;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-text {
+    font-size: 3.5rem;
+    margin: 0;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.dark-theme .welcome-text {
+    background: none;
+    color: #00ff9d !important;
+}
+
+.typing {
+    font-size: 1.5rem;
+    min-height: 2em;
+    margin: 1rem 0;
+}
+
+/* Projects Section */
+.projects {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+}
+
+.dark-theme .projects {
+    background: #1a1a1a;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--primary);
+}
+
+.project-grid {
+    display: none;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+
+.project-grid.active {
+    display: grid;
+    
+}
+
+.project-item {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+    
+}
+
+.dark-theme .project-item {
+    background: #2a2a2a;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tech-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    margin: 0.25rem;
+    border-radius: 1rem;
+    background: var(--primary);
+    color: white;
+    font-size: 0.875rem;
+}
+
+.dark-theme .tech-tag {
+    color: rgb(0, 0, 0); /* ou une autre couleur si tu veux garder le texte lisible */
+  }
+  
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: var(--primary);
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    margin: 2rem 0;
+    position: relative;
+}
+
+.timeline-content {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 2rem);
+    margin-left: auto;
+}
+
+.timeline-content h4 {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.dark-theme .timeline-content {
+    background: #2a2a2a;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+/* Certificates */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certificate-item {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.dark-theme .certificate-item {
+    background: #2a2a2a;
+}
+
+.certificate-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.certificate-item p:last-of-type {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Experience */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-item {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
+}
+
+.dark-theme .experience-item {
+    background: #2a2a2a;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.period {
+    color: var(--primary);
+    font-weight: 500;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    background: white;
+    transition: var(--transition);
+}
+
+.dark-theme .form-group input,
+.dark-theme .form-group textarea {
+    background: #2a2a2a;
+    border-color: #404040;
+    color: white;
+}
+
+.submit-btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: block;
+    margin: 2rem auto;
+}
+
+.dark-theme .submit-btn {
+    color: black;
+}
+
+.submit-btn:hover {
+    background: var(--secondary);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    color: var(--primary);
+}
+
+/* Chatbot */
+.chatbot {
+    position: fixed;
+    bottom: 5rem;
+    right: 2rem;
+    width: 300px;
+    height: 400px;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dark-theme .chatbot {
+    background: #2a2a2a;
+}
+
+.dark-theme .chatbot-toggle {
+    background: #00ff9d; 
+}
+
+.chatbot-header {
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.chatbot-input {
+    padding: 1rem;
+    border: none;
+    border-top: 1px solid #ddd;
+    width: 100%;
+}
+
+.chatbot-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chatbot-send-btn {
+    padding: 10px;
+    background-color: var(--secondary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dark-theme .chatbot-send-btn {
+    padding: 10px;
+    background-color: #009d70;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.chatbot-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+    }
+    
+    .timeline::before {
+        left: 0;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 2rem);
+        margin: 1rem !important;
+    }
+    
+    .welcome-text {
+        font-size: 2.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+[data-aos] {
+    opacity: 0;
+    transition: var(--transition);
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}

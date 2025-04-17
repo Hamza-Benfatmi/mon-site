@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamza Benfatmi | Personal Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">
+                <img src="logo-light.png" class="logo-img light-mode" alt="Logo light">
+                <img src="logo-dark.png" class="logo-img dark-mode" alt="Logo dark">              </a>
+            <div class="nav-controls">
+                <div class="profile-toggle">
+                    <button id="electronicsBtn" class="active">Électronique</button>
+                    <button id="softwareBtn">Informatique</button>
+                </div>
+                <button id="langToggle">FR</button>
+                <button id="themeToggle">🌙</button>
+            </div>
+        </div>
+        <div class="nav-menu">
+            <a href="#home" class="nav-link">Accueil</a>
+            <a href="#projects" class="nav-link">Projets</a>
+            <a href="#education" class="nav-link">Formation</a>
+            <a href="#certificates" class="nav-link">Certificats</a>
+            <a href="#experience" class="nav-link">Expérience</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero">
+            <div id="particles-js"></div>
+            <div class="hero-content">
+                <h2 class="welcome-text">Bienvenue ! / Welcome!</h2>
+                <div id="typing-text" class="typing"></div>
+                <div class="profile-description">
+                    <div id="electronics-desc" class="active">
+                        <h3>Électronique & Systèmes Embarqués</h3>
+                        <p>Spécialiste en conception de systèmes embarqués et robotique</p>
+                    </div>
+                    <div id="software-desc">
+                        <h3>Développement Logiciel</h3>
+                        <p>Expert en développement d'applications web et mobiles</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects">
+            <h3 class="section-title">Projets</h3>
+            <div class="project-grid electronics-content active">
+                <!-- Projets électroniques -->
+            </div>
+            <div class="project-grid software-content">
+                <!-- Projets informatiques -->
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <h3 class="section-title">Formation</h3>
+            <div class="timeline">
+                <!-- Timeline items will be added by JavaScript -->
+            </div>
+        </section>
+
+        <section id="certificates" class="certificates">
+            <h3 class="section-title">Certificats</h3>
+            <div class="certificates-grid">
+                <!-- Certificates will be added by JavaScript -->
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <h3 class="section-title">Expérience Professionnelle</h3>
+            <div class="experience-grid">
+                <!-- Experience items will be added by JavaScript -->
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h3 class="section-title">Contact</h3>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" required placeholder="Nom">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+            <div class="social-links">
+                <a href="https://github.com/Hamza-Benfatmi/" class="social-link">GitHub</a>
+                <a href="https://www.linkedin.com/in/benfatmihamza/" class="social-link">LinkedIn</a>
+                <a href="mailto:hamzabenfatmi10@gmail.com" class="social-link">Email</a>
+            </div>
+        </section>
+    </main>
+
+    <div id="chatbot" class="chatbot">
+        <div class="chatbot-header">
+            <span>Assistant</span>
+            <button id="closeChatbot">×</button>
+        </div>
+        <div class="chatbot-messages"></div>
+        <div class="chatbot-input-container">
+            <input type="text" class="chatbot-input" placeholder="Posez votre question..." id="chat-input">
+            <button id="sendMessageBtn" class="chatbot-send-btn">Envoyer</button>
+        </div>
+    </div>
+    <button id="openChatbot" class="chatbot-toggle">💬</button>
+    
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
